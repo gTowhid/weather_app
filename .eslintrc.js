@@ -24,6 +24,8 @@ module.exports = {
   overrides: [],
   plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
+    'import/prefer-default-export': 0,
+    'import/no-extraneous-dependencies': 0,
     'react/react-in-jsx-scope': 0,
     'react-hooks/rules-of-hooks': 'error',
     'no-console': 0,
@@ -37,16 +39,6 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
-    'prettier/prettier': [
-      'off',
-      {
-        trailingComma: 'es5',
-        singleQuote: true,
-        printWidth: 100,
-        tabWidth: 4,
-        semi: true,
-        endOfLine: 'auto',
-      },
-    ],
+    'prettier/prettier': 0,
   },
 };
