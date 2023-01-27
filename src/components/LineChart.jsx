@@ -2,13 +2,15 @@ import { ResponsiveLine } from '@nivo/line';
 // import { mockLineData as data } from '../utlis/mockData';
 import { useEffect, useState } from 'react';
 import { fetchFromAPI } from '../utlis/fetchFromAPI';
+import useLocation from '../utlis/useLocation';
 
 export default function LineChart({ url }) {
+  // insert { url } as the param for API to work
+  const { lat, lon } = useLocation();
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // default is forecast/minutely
-    fetchFromAPI(url)
+    fetchFromAPI(url, lat, lon)
       .then((response) => {
         // eslint-disable-next-line arrow-body-style, array-callback-return
         const chartData = response.data.map((n) => {
@@ -29,7 +31,7 @@ export default function LineChart({ url }) {
       .catch((err) => {
         console.log(err);
       });
-  }, [url]);
+  }, [url, lat, lon]);
 
   return (
     <ResponsiveLine

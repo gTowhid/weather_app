@@ -9,7 +9,6 @@ export default function App() {
   return (
     <Box>
       <Navbar setUrl={setUrl} />
-      {url}
       <Box height="50vh">
         <LineChart url={url} />
       </Box>
