@@ -12,7 +12,10 @@ export default function LineChart({ url }) {
       .then((response) => {
         // eslint-disable-next-line arrow-body-style, array-callback-return
         const chartData = response.data.map((n) => {
-          return { x: n.timestamp_local, y: n.temp };
+          return {
+            x: url === 'forecast/daily' ? n.valid_date : n.timestamp_local,
+            y: n.temp,
+          };
         });
         setData([
           {
