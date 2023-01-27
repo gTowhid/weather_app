@@ -3,16 +3,16 @@ import { ResponsiveLine } from '@nivo/line';
 import { useEffect, useState } from 'react';
 import { fetchFromAPI } from '../utlis/fetchFromAPI';
 
-export default function LineChart() {
+export default function LineChart({ url }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     // default is forecast/minutely
-    fetchFromAPI('forecast/3hourly')
+    fetchFromAPI(url)
       .then((response) => {
         // eslint-disable-next-line arrow-body-style, array-callback-return
         const chartData = response.data.map((n) => {
-          return { x: new Date(n.timestamp_local).getHours(), y: n.temp };
+          return { x: n.timestamp_local, y: n.temp };
         });
         setData([
           {
@@ -21,12 +21,12 @@ export default function LineChart() {
             data: chartData,
           },
         ]);
-        // console.log(chartData);
+        console.log(chartData);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [url]);
 
   return (
     <ResponsiveLine
