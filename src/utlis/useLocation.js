@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 export default function useLocation() {
-  const [lat, setLat] = useState(0.0);
-  const [lon, setLon] = useState(0.0);
+  const [lat, setLat] = useState(35.5);
+  const [lon, setLon] = useState(-78.5);
 
   useEffect(() => {
     async function successFunction(position) {
       setLat(position.coords.latitude.toFixed(1));
       setLon(position.coords.longitude.toFixed(1));
-      console.log(`Your latitude is :${lat} and longitude is ${lon}`);
+      // console.log(`Your latitude is :${lat} and longitude is ${lon}`);
     }
 
     if (navigator.geolocation) {

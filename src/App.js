@@ -5,13 +5,12 @@ import LineChart from './components/LineChart';
 
 export default function App() {
   const [url, setUrl] = useState('forecast/minutely');
+  const [city, setCity] = useState('Four Oaks');
 
   return (
     <Box>
-      <Navbar setUrl={setUrl} />
-      <Box height="50vh">
-        <LineChart url={url} />
-      </Box>
+      <Navbar setUrl={setUrl} city={city} />
+      <LineChart url={url} setCity={setCity} />
     </Box>
   );
 }
