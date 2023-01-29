@@ -2,7 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import SearchBar from './SearchBar';
 import img from '../assets/logo.jpeg';
 
-export default function Navbar({ setUrl, city }) {
+export default function Navbar({ setUrl, city, setOlat, setOlon }) {
   return (
     <Box>
       <Box
@@ -17,7 +17,7 @@ export default function Navbar({ setUrl, city }) {
         <Typography variant="h5" maxWidth="30px" sx={{ color: 'white' }}>
           Temperature Here
         </Typography>
-        <SearchBar />
+        <SearchBar setOlat={setOlat} setOlon={setOlon} />
       </Box>
 
       <Box sx={{ backgroundColor: '#24759f' }}>

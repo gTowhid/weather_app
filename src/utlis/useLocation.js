@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 export default function useLocation() {
-  const [lat, setLat] = useState(35.5);
-  const [lon, setLon] = useState(-78.5);
+  const [lat, setLat] = useState(null);
+  const [lon, setLon] = useState(null);
 
   useEffect(() => {
     async function successFunction(position) {

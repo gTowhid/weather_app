@@ -1,14 +1,19 @@
 import { ResponsiveLine } from '@nivo/line';
 import { Box } from '@mui/material';
-import { mockLineData as data } from '../utlis/mockData';
+import { mockLineData as data } from '../assets/mockData';
 // import { useEffect, useState } from 'react';
 // import { fetchFromAPI } from '../utlis/fetchFromAPI';
 // import useLocation from '../utlis/useLocation';
 
-export default function LineChart() {
-  // insert { url, setCity } as the param for API to work
-  /* const { lat, lon } = useLocation();
+// eslint-disable-next-line no-unused-vars
+export default function LineChart({ url, setCity, olat, olon }) {
+  /* let { lat, lon } = useLocation();
   const [data, setData] = useState([]);
+
+  if (olat && olon) {
+    lat = olat;
+    lon = olon;
+  }
 
   useEffect(() => {
     fetchFromAPI(url, lat, lon)
@@ -20,7 +25,9 @@ export default function LineChart() {
             y: n.temp,
           };
         });
-        setCity(`${response.city_name} | ${response.timestamp_local}`);
+        setCity(
+          `${response.timezone} | ${response.state_code} | ${response.country_code}`
+        );
         setData([
           {
             id: response.city_name,
@@ -33,6 +40,7 @@ export default function LineChart() {
       .catch((err) => {
         console.log(err);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url, lat, lon, setCity]); */
 
   return (

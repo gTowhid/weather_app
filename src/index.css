@@ -21,8 +21,7 @@ code {
 }
 
 .searchBox:focus {
-  border: none;
-  color: 'whitesmoke';
+  outline: none;
 }
 
 input, select, textarea{
