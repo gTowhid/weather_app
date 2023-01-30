@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import SearchBar from './SearchBar';
 import img from '../assets/logo.jpeg';
 
@@ -10,12 +10,12 @@ export default function Navbar({ setUrl, city, setOlat, setOlon }) {
           backgroundColor: '#005986',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-around',
+          justifyContent: 'center',
         }}
       >
-        <img src={img} alt="logo" />
-        <Typography variant="h5" maxWidth="30px" sx={{ color: 'white' }}>
-          Temperature Here
+        <img src={img} alt="logo" style={{ marginRight: '10vw' }} />
+        <Typography variant="h5" paddingRight="40vw" sx={{ color: 'white' }}>
+          World Temperatures
         </Typography>
         <SearchBar setOlat={setOlat} setOlon={setOlon} />
       </Box>
@@ -33,30 +33,33 @@ export default function Navbar({ setUrl, city, setOlat, setOlon }) {
           justifyContent: 'space-around',
         }}
       >
-        <Button
-          variant="text"
+        <button
+          className="navButton"
+          type="submit"
           onClick={() => {
             setUrl('forecast/minutely');
           }}
         >
           Nowcast
-        </Button>
-        <Button
-          variant="text"
+        </button>
+        <button
+          className="navButton"
+          type="submit"
           onClick={() => {
             setUrl('forecast/3hourly');
           }}
         >
           5 Day Forecast
-        </Button>
-        <Button
-          variant="text"
+        </button>
+        <button
+          className="navButton"
+          type="submit"
           onClick={() => {
             setUrl('forecast/daily');
           }}
         >
           16 Day Forecast
-        </Button>
+        </button>
       </Box>
     </Box>
   );

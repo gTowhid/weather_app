@@ -19,12 +19,11 @@ export default function SearchBar({ setOlat, setOlon }) {
     setOlat(output[0].latitude);
     setOlon(output[0].longitude);
 
-    console.log(output);
     setSearchTerm('');
   };
 
   return (
-    <>
+    <div className="searchBar">
       <Paper
         component="form"
         onSubmit={(e) => e.preventDefault()}
@@ -45,7 +44,11 @@ export default function SearchBar({ setOlat, setOlon }) {
         <IconButton
           type="submit"
           sx={{ p: '10px', color: 'red' }}
-          onClick={() => searchClick(searchTerm)}
+          onClick={() =>
+            searchClick(
+              searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1)
+            )
+          }
         >
           <SearchIcon sx={{ color: 'whitesmoke' }} />
         </IconButton>
@@ -59,6 +62,7 @@ export default function SearchBar({ setOlat, setOlon }) {
           .slice(0, 5)
           .map((el) => (
             <button
+              className="searchOptions"
               type="submit"
               name={el.city}
               onClick={(e) => searchClick(e.target.name)}
@@ -67,6 +71,6 @@ export default function SearchBar({ setOlat, setOlon }) {
               {el.city}
             </button>
           ))}
-    </>
+    </div>
   );
 }

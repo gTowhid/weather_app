@@ -37,3 +37,37 @@ textarea:focus, input:focus {
   color: whitesmoke;
   font-size: 1rem;
 }
+
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  position: absolute;
+  top: 20px;
+  right: 15vw;
+}
+
+.searchOptions {
+  width: 24vw;
+  min-width: 20vw;
+  padding: 10px;
+  background-color: #24759f;
+  border: 1px solid whitesmoke;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.navButton {
+  width: 50%;
+  font-size: large;
+  font-weight: 600;
+  background-color: #0e4763;
+  color: whitesmoke;
+  border: none;
+  padding: 10px 0;
+}
+
+.navButton:focus {
+  border-bottom: 0.5px solid #0e4763;
+  background-image: linear-gradient(#0e4763, #1e6082);
+}
