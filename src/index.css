@@ -65,6 +65,7 @@ textarea:focus, input:focus {
   color: whitesmoke;
   border: none;
   padding: 10px 0;
+  cursor: pointer;
 }
 
 .navButton:focus {
