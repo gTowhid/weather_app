@@ -2,13 +2,10 @@ import { useState } from 'react';
 import { Paper, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-// import useFetchLoc from '../utlis/useFetchLoc';
 import { geoLocations } from '../assets/mockGeoLocations';
 
 export default function SearchBar({ setOlat, setOlon }) {
   const [searchTerm, setSearchTerm] = useState('');
-
-  // const { geoLocations } = useFetchLoc();
 
   // eslint-disable-next-line no-shadow
   const searchClick = (searchTerm) => {
