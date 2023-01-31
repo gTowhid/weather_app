@@ -1,13 +1,13 @@
 import { ResponsiveLine } from '@nivo/line';
 import { Box } from '@mui/material';
-import { mockLineData as data } from '../assets/mockData';
-// import { useEffect, useState } from 'react';
-// import { fetchFromAPI } from '../utlis/fetchFromAPI';
-// import useLocation from '../utlis/useLocation';
+// import { mockLineData as data } from '../assets/mockData';
+import { useEffect, useState } from 'react';
+import { fetchFromAPI } from '../utlis/fetchFromAPI';
+import useLocation from '../utlis/useLocation';
 
 // eslint-disable-next-line no-unused-vars
 export default function LineChart({ url, setCity, olat, olon }) {
-  /* let { lat, lon } = useLocation();
+  let { lat, lon } = useLocation();
   const [data, setData] = useState([]);
 
   if (olat && olon) {
@@ -41,7 +41,7 @@ export default function LineChart({ url, setCity, olat, olon }) {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url, lat, lon, setCity]);
- */
+
   return (
     <Box
       height="80vh"
