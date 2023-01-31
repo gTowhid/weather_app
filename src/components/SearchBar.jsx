@@ -25,10 +25,8 @@ export default function SearchBar({ setOlat, setOlon }) {
         component="form"
         onSubmit={(e) => e.preventDefault()}
         sx={{
-          pl: 2,
           boxShadow: 'none',
           borderRadius: 20,
-          mr: { sm: 5 },
           backgroundColor: '#24759f',
         }}
       >
@@ -37,10 +35,11 @@ export default function SearchBar({ setOlat, setOlon }) {
           placeholder="Search..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ marginLeft: '10px' }}
         />
         <IconButton
           type="submit"
-          sx={{ p: '10px', color: 'red' }}
+          className="iconButton"
           onClick={() =>
             searchClick(
               searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1)

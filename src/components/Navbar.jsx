@@ -6,6 +6,7 @@ export default function Navbar({ setUrl, city, setOlat, setOlon }) {
   return (
     <Box>
       <Box
+        className="topBar"
         sx={{
           backgroundColor: '#005986',
           display: 'flex',
@@ -14,7 +15,12 @@ export default function Navbar({ setUrl, city, setOlat, setOlon }) {
         }}
       >
         <img src={img} alt="logo" style={{ marginRight: '10vw' }} />
-        <Typography variant="h5" paddingRight="40vw" sx={{ color: 'white' }}>
+        <Typography
+          className="topBarText"
+          variant="h5"
+          paddingRight="40vw"
+          sx={{ color: 'white' }}
+        >
           World Temperatures
         </Typography>
         <SearchBar setOlat={setOlat} setOlon={setOlon} />

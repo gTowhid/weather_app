@@ -17,7 +17,6 @@ code {
 .searchBox {
   background-color: #24759f;
   border: none;
-  min-width: 20vw;
 }
 
 .searchBox:focus {
@@ -71,4 +70,21 @@ textarea:focus, input:focus {
 .navButton:focus {
   border-bottom: 0.5px solid #0e4763;
   background-image: linear-gradient(#0e4763, #1e6082);
+}
+
+@media (max-width: 800px) {
+  .topBarText {
+    display: none;
+  }
+  .topBar img {
+    padding-right: 50vw;
+  }
+
+  .searchBar {
+    right: 5vw;
+  }
+
+  .searchOptions {
+    width: 100%;
+  }
 }
