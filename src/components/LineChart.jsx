@@ -1,12 +1,15 @@
 import { ResponsiveLine } from '@nivo/line';
 import { Box } from '@mui/material';
+import { useEffect, useState, useContext } from 'react';
 // import { mockLineData as data } from '../assets/mockData';
-import { useEffect, useState } from 'react';
+// eslint-disable-next-line import/no-cycle
+import { AllContext } from '../App';
 import { fetchFromAPI } from '../utlis/fetchFromAPI';
 import useLocation from '../utlis/useLocation';
 
 // eslint-disable-next-line no-unused-vars
-export default function LineChart({ url, setCity, olat, olon }) {
+export default function LineChart() {
+  const { url, setCity, olat, olon } = useContext(AllContext);
   let { lat, lon } = useLocation();
   const [data, setData] = useState([]);
 

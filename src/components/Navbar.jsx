@@ -1,8 +1,12 @@
 import { Box, Typography } from '@mui/material';
+import { useContext } from 'react';
 import SearchBar from './SearchBar';
 import img from '../assets/logo.jpeg';
+// eslint-disable-next-line import/no-cycle
+import { AllContext } from '../App';
 
-export default function Navbar({ setUrl, city, setOlat, setOlon }) {
+export default function Navbar() {
+  const { setUrl, city } = useContext(AllContext);
   return (
     <Box>
       <Box
@@ -23,7 +27,7 @@ export default function Navbar({ setUrl, city, setOlat, setOlon }) {
         >
           World Temperatures
         </Typography>
-        <SearchBar setOlat={setOlat} setOlon={setOlon} />
+        <SearchBar />
       </Box>
 
       <Box sx={{ backgroundColor: '#24759f' }}>

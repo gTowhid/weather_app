@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Paper, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { geoLocations } from '../assets/mockGeoLocations';
+// eslint-disable-next-line import/no-cycle
+import { AllContext } from '../App';
 
-export default function SearchBar({ setOlat, setOlon }) {
+export default function SearchBar() {
+  const { setOlat, setOlon } = useContext(AllContext);
   const [searchTerm, setSearchTerm] = useState('');
 
   // eslint-disable-next-line no-shadow
